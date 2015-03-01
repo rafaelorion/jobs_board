@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Premin's Jobs</h1>
+
+<%= render @jobs %>
+<%= will_paginate @jobs %>
+
+<br>
+
+<%= link_to 'New Job', new_job_path %> </br>
+<%= link_to "hello world", controller: "hello", action: "world" %></br>
+<%= link_to "All jobs", jobs_path %>
+
+ 
