@@ -46,3 +46,4 @@ end
 
 
 gem 'will_paginate'
+gem 'bcrypt-ruby', '~>3.0'

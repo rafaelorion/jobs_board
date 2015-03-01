@@ -1,6 +1,9 @@
  Rails.application.routes.draw do
   
   root to: "jobs#premium"
+
+  resources :companies, only: [:new, :create]
+
   resources :jobs do
     post "comments", to: "comments#create"
   end
