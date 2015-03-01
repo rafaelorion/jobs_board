@@ -3,17 +3,40 @@
  * listed below.
  *
  * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
- * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
  *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any styles
- * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
- * file per style scope.
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
  *
- *= require_tree .
+ *= require bootstrap
  *= require_self
+ *= require_tree .
  */
+body {
+  padding-top: 60px;
+}
 
+/* Twitter Bootstrap overrides with proper image paths */
+[class^="icon-"],
+[class*=" icon-"] {
+  background-image: image-url('bootstrap/glyphicons-halflings.png');
+}
+
+.icon-white,
+.nav-tabs > .active > a > [class^="icon-"],
+.nav-tabs > .active > a > [class*=" icon-"],
+.nav-pills > .active > a > [class^="icon-"],
+.nav-pills > .active > a > [class*=" icon-"],
+.nav-list > .active > a > [class^="icon-"],
+.nav-list > .active > a > [class*=" icon-"],
+.navbar-inverse .nav > .active > a > [class^="icon-"],
+.navbar-inverse .nav > .active > a > [class*=" icon-"],
+.dropdown-menu > li > a:hover > [class^="icon-"],
+.dropdown-menu > li > a:hover > [class*=" icon-"],
+.dropdown-menu > .active > a > [class^="icon-"],
+.dropdown-menu > .active > a > [class*=" icon-"] {
+  background-image: url("bootstrap/glyphicons-halflings-white.png");
+}
 #alert {
 	 color: red; 
 }

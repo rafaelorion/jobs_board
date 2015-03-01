@@ -1,15 +1,13 @@
-<p id="notice"><%= notice %></p>
-<p id="alert"><%= flash[:alert] %></p>
+<% if notice %><p class="alert alert-success"><%= notice %></p><% end %>
+<% if alert %><p class="alert alert-error"><%= alert %></p><% end %>
 
-<h1>
-  <%= job_title @job %>
-</h1>
+<h1><%= job_title @job %></h1>
 
 <%= simple_format @job.description %>
 
 <p>
-  <%= pluralize(@job.comments.size, "comments" )%> |
-  <%= link_to 'Edit', edit_job_path(@job) %> | 
+  <%= pluralize(@job.comments.size, "comment") %> |
+  <%= link_to 'Edit', edit_job_path(@job) %> |
   <%= link_to 'Back', jobs_path %>
 </p>
 
@@ -17,4 +15,4 @@
 <%= render "comments/form" %>
 
 <h2>Comments</h2>
-<%= render @job.comments %> 
+<%= render @job.comments %>
