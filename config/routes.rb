@@ -2,6 +2,10 @@
   
   root to: "jobs#premium"
 
+  get "companies/login", to: "login#new"
+  post "companies/login", to: "login#create"
+
+
   resources :companies, only: [:new, :create]
 
   resources :jobs do
