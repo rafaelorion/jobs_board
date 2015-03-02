@@ -4,13 +4,21 @@ class CommentsController < ApplicationController
 		
 		@comment = @job.comments.build(params[:comment].permit(:name, :body))
 		
-		if @comment.save
-			flash[:notice] = "Comment was created with success!"
-		else
-			flash[:alert] = "Please fill in all fields o create a comment."
-		end
 
-		redirect_to @job
+		respond_to do |format|
+			format.html do 
+				if @comment.save
+					flash[:notice] = "Comment was created with success!"
+				else
+					flash[:alert] = "Please fill in all fields o create a comment."
+				end
+
+				redirect_to @job
+			end
+			format.js do
+				@comment.save
+			end
+		end
 	end
 
 	def destroy
