@@ -7,12 +7,12 @@ class JobsController < ApplicationController
   # GET /jobs
   # GET /jobs.json
   def index
-    @jobs = Job.most_recent.all
+    @jobs = Job.most_recent.includes(:company).all
   end
 
   def premium
     # @jobs = Job.where(premium: true).order("created_at DESC").all
-    @jobs = Job.where(premium: true).order("created_at DESC").paginate(page: params[:page], per_page:3 )
+    @jobs = Job.where(premium: true).includes(:company).order("created_at DESC").paginate(page: params[:page], per_page:3 )
   end
   # GET /jobs/1
   # GET /jobs/1.json
