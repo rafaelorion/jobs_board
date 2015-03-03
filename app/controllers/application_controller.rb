@@ -18,7 +18,7 @@ class ApplicationController < ActionController::Base
 
     if params[:locale].present? 
       I18n.locale = locale
-      cookies[:locale] = { value: locale, expires: 30.days.from_now }      
+      cookies[:locale] = { value: locale, expires: 30.days.from_now  }      
     end
   end
 
