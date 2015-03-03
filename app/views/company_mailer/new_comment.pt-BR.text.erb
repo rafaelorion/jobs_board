@@ -1,0 +1,10 @@
+Olá <%= @company.name %>,
+
+Voce recebeu um novo comentário na sua vaga <%=  @job.title %> Vaga:
+
+Nome: <%=  @comment.name %>
+Comentario: <%=  @comment.body %>
+
+Voce pode ver todos os comentarios em <%= job_url(@job) %>.
+
+Obrigado! 

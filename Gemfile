@@ -47,3 +47,4 @@ end
 
 gem 'will_paginate'
 gem 'bcrypt-ruby', '~>3.0'
+gem 'rails-i18n'

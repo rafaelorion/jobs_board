@@ -19,42 +19,50 @@
 # To learn more, please read the Rails Internationalization guide
 # available at http://guides.rubyonrails.org/i18n.html.
 
-en:
+pt-BR:
+
+  activerecord:
+    models:
+      comment: "Comentário"
+    attributes:
+      comment:
+        name: "Nome"
+        body: "Mensagem"
 
   helpers:
     submit:
       comment:
-        create: "Send"
+        create: "Enviar"
 
-  hello: "Hello world" 
+  hello: "Hello world"
 
   menu:
-    premium_jobs: "Premium jobs"
-    all_jobs: "All jobs"
+    premium_jobs: "Vagas Premium"
+    all_jobs: "Todas as vagas"
     hello_world: "Hello world"
-    new_job: "New job"
-    logged_as: "Logged as"
-    new_company: "New company"
-    login: "Login"
+    new_job: "Nova vaga"
+    logged_as: "Logado como"
+    new_company: "Nova companhia"
+    login: "Entrar"
   
   jobs:
-    listing: "Listing Jobs"
+    listing: "Lista de vagas"
     show:
-      new_comment: "New comment"
-      comments: "Comments"
+      new_comment: "Novo comentario"
+      comments: "Comentarios"
   
   comments:
-    count: "comments"
+    count: "Comentarios"
     comment:
-      said: "%{name} said"
-      sent: "Sent %{timestamp} ago"
+      said: "%{name} disse"
+      sent: "Enviada a %{timestamp} atráz"
 
-  links:
-    back: "Back"
-    edit: "Edit"
-    destroy: "Destroy"
-    destroy_confirmation: "Are you sure?"
+  links: 
+    back: "Voltar"
+    edit: "Editar"
+    destroy: "Deletar"
+    destroy_confirmation: "Deseja realmente apagar?"
 
   company_mailer:
     new_comment:
-      subject: "New comment received"
+      subject: "Novo comentario recebido"
