@@ -16,7 +16,12 @@ class JobsController < ApplicationController
   # GET /jobs
   # GET /jobs.json
   def index
-    @jobs = Job.most_recent.includes(:company).all
+    @id_minimo = params[:id_minimo]
+    if(@id_minimo)
+      @jobs = Job.where("id >= ?",@id_minimo).most_recent.includes(:company).all
+    else
+      @jobs = Job.most_recent.includes(:company).all
+    end
 
     respond_to do |format|
       format.html # index.html.erb
