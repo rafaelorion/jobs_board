@@ -17,6 +17,18 @@ class JobsController < ApplicationController
   # GET /jobs.json
   def index
     @jobs = Job.most_recent.includes(:company).all
+
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json {render json: @jobs}
+      format.atom { 
+        if @jobs.first
+          @last_updated = @jobs.first.updated_at 
+        else
+          @last_updated = Time.now
+        end
+      }
+    end
   end
 
   def premium
