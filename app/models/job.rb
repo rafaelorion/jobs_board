@@ -1,3 +1,5 @@
+#require "#{Rails.root}/lib/exceptions/slug_error.rb" 
+
 class Job < ActiveRecord::Base
 	has_many :comments
 	belongs_to :company 
@@ -14,7 +16,9 @@ class Job < ActiveRecord::Base
 		if(result.to_param == slug)
 			result
 		else
-			raise ActiveRecord::RecordNotFound
+			#raise ActiveRecord::RecordNotFound
+			raise Exceptions::SlugError.new(result)
 		end
 	end
 end
+ 

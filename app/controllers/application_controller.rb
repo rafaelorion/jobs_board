@@ -4,6 +4,14 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_filter :set_locale
 
+
+  rescue_from Exceptions::SlugError, :with => :rescue_from_slug_error
+  def rescue_from_slug_error(exception)
+    #render :text => "Slug error!"
+    #render :text => exception.objeto.title
+    redirect_to exception.objeto
+  end
+  
   private 
   def current_company
   	@current_company ||= if session[:company_id]

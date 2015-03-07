@@ -4,6 +4,15 @@ class JobsController < ApplicationController
 
   before_action :set_job, only: [:show, :edit, :update, :destroy]
 
+  rescue_from ActiveRecord::RecordNotFound, :with => :rescue_from_not_found
+  def rescue_from_not_found()
+    render :text => "Nao localizado!"
+    #render :text => exception.objeto.title
+    #redirect_to exception.objeto
+  end
+
+
+
   # GET /jobs
   # GET /jobs.json
   def index
