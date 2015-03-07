@@ -37,6 +37,3 @@ body {
 .dropdown-menu > .active > a > [class*=" icon-"] {
   background-image: url("bootstrap/glyphicons-halflings-white.png");
 }
-#alert {
-	 color: red; 
-}
