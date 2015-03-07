@@ -6,7 +6,7 @@
   post "companies/login", to: "login#create"
 
 
-  resources :companies, only: [:new, :create]
+  resources :companies, only: [:new, :create, :show]
 
   resources :jobs do
     post "comments", to: "comments#create"

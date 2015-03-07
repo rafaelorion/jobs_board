@@ -16,4 +16,10 @@ class CompaniesController < ApplicationController
 	def company_params
       params.require(:company).permit(:name, :email, :password, :password_confirmation)
     end
+
+    def show
+    	@company=Company.find(params[:id])
+    	#render xml: @company, except:  ['encrypted_password'], include: [:jobs]
+    	render json: @company, except:  ['encrypted_password'], include: [:jobs]
+    end
 end
