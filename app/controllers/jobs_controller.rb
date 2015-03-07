@@ -17,6 +17,9 @@ class JobsController < ApplicationController
   # GET /jobs/1
   # GET /jobs/1.json
   def show
+    @jog = Job.find_by_slug(params[:id])
+    #@jog = Job.find(params[:id])
+
   end
 
   # GET /jobs/new
