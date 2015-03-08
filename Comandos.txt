@@ -62,6 +62,8 @@ Deploy Heroku :
 		heroku run rake db:migrate
 		resultado: https://stormy-dawn-9372.herokuapp.com/
 
+	Renomear app
+		heroku apps:rename newname
 Ruby : 
 	
 
