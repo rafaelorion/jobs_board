@@ -60,13 +60,14 @@ Deploy Heroku :
 		heroku create 
 		git push heroku master
 		heroku run rake db:migrate
-		resultado: https://stormy-dawn-9372.herokuapp.com/
+		resultado: https://orion-job-board.herokuapp.com/
 
 	Renomear app
 		heroku apps:rename newname
 		git remote rm heroku
 		heroku git:remote -a newname
-		
+		ref: https://devcenter.heroku.com/articles/renaming-apps#updating-git-remotes
+
 Ruby : 
 	
 
