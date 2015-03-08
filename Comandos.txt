@@ -64,6 +64,9 @@ Deploy Heroku :
 
 	Renomear app
 		heroku apps:rename newname
+		git remote rm heroku
+		heroku git:remote -a newname
+		
 Ruby : 
 	
 
