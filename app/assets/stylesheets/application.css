@@ -12,14 +12,13 @@
  *= require_self
  *= require_tree .
  */
-body {
+
+ body {
   padding-top: 60px;
 }
 
-/* Twitter Bootstrap overrides with proper image paths */
-[class^="icon-"],
-[class*=" icon-"] {
-  background-image: image-url('bootstrap/glyphicons-halflings.png');
+#alert {
+	 color: red; 
 }
 
 .icon-white,
@@ -36,7 +35,4 @@ body {
 .dropdown-menu > .active > a > [class^="icon-"],
 .dropdown-menu > .active > a > [class*=" icon-"] {
   background-image: url("bootstrap/glyphicons-halflings-white.png");
-}
-#alert {
-	 color: red; 
 }
