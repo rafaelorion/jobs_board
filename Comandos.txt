@@ -1,0 +1,68 @@
+Comandos terminal:
+
+	irb : Entra no interpretador de comandos do ruby
+	rails console : Entra no interpretador de comandos do rails
+	bundle install : Instala as dependencias do projeto 
+
+	rails new NOME_PROJETO : cria um novo projeto
+	rails server : Cria um servidor da aplicaçao no endereço http://localhost:3000/
+	rails generate scaffold NOME_CLASSE NOME_PROPRIEDADE:string NOME_PROPRIEDADE:text : Gera uma classe com CRUD pronto
+	rails generate controller NOME_CONTROLLER NOME_ACTION : Cria um controller com action
+	rails generate migration add_premion_to_jobs premium:boolean : Adiciona propredade e cria migration
+	rails generate model comment name:string body:text job_id:integer
+
+	rake routes : Exibe as rotas do projeto
+	rake db:create : Cria um banco de dados (padrão sqlite3)
+	rake db:migrate : Executa os migrations do projeto
+
+	rails g mailer CompanyMailer new_comment
+
+	bundle exec rake assets:precompile RAILS_ENV=production : compila os assets em producao 
+
+Rails : 
+	Definir pagina principal : [config/routes.rb]  
+		root to: "jobs#index"
+
+	Validação no Model de propriedades obrigatorias : 
+		validates_presence_of :NOME_CAMPO1, :NOME_CAMPO2 
+	
+	Alterar banco de dados : gemfile
+		gem 'sqlite3', group: [ :development, :test]
+		gem 'pg', group: :production
+
+	will paginate
+		Gemfile:
+			gem will_paginate'
+		controller:
+			def premium
+			    @jobs = Job.where(premium: true).order("created_at DESC").paginate(page: params[:page], per_page:3 )
+			  end
+		View:
+			<%= render @jobs %>
+			<%= will_paginate @jobs %>
+
+Deploy Heroku : 
+	Install Heroku toolbelt :
+		brew install heroku-toolbelt
+		heroku update
+	Adicionando ssh key:
+		No diretorio ~/.ssh
+		heroku keys:add
+	Terminal :
+		heroku --help   :Help
+		heroku login : Autenticar no heroku
+		bundle install --without production : Instalar dependencias exceto as de produção
+
+		git init .
+		git add .
+		git commit -m "initial commit"
+
+		heroku create 
+		git push heroku master
+		heroku run rake db:migrate
+		resultado: https://stormy-dawn-9372.herokuapp.com/
+
+Ruby : 
+	
+
+	
